@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD 
+ Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace实际上接口的名字 -->
+<mapper namespace="mapper.BasketballMapper">
+	
+  <insert id="addBasketball" parameterType="Basketball">
+  	insert into basketball
+  	values(#{id},#{name},#{area},#{price})
+  </insert>
+	 <delete id="deleteBasketball">
+  	 delete from basketball where id=#{id}
+  </delete>
+	  <select id="findById" resultType="Basketball">
+    select * from basketball
+    where id = #{id}
+  </select>
+  <!-- resultType表示结果集中一行对应的类型 -->
+  <select id="getBasketballs" resultType="Basketball">
+    select * from basketball
+  </select>
+    <update id="updateBasketball" parameterType="Basketball">
+  	update basketball
+  	set area=#{area},name=#{name},price=#{price}
+  	where id=#{id}
+  </update>
+</mapper>

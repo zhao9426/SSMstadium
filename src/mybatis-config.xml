@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 在映射文件件中可以直接使用Course表示entity.Course -->
+	<typeAliases>
+		<typeAlias type="entity.LoginEntity" alias="LoginEntity" />
+
+		<typeAlias type="entity.Stadium" alias="Stadium" />
+		<typeAlias type="entity.Football" alias="Football" />
+		<typeAlias type="entity.Basketball" alias="Basketball" />
+		<typeAlias type="entity.Badminton" alias="Badminton" />
+		<typeAlias type="entity.Gymnasium" alias="Gymnasium" />
+		<typeAlias type="entity.Questionnaire" alias="Questionnaire" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="entity/LoginMapper.xml" />
+
+		<mapper resource="entity/StadiumMapper.xml" />
+		<mapper resource="entity/FootballMapper.xml" />
+		<mapper resource="entity/BasketballMapper.xml" />
+		<mapper resource="entity/BadmintonMapper.xml" />
+		<mapper resource="entity/GymnasiumMapper.xml" />
+		<mapper resource="entity/QuestionnaireMapper.xml" />
+	</mappers>
+</configuration>

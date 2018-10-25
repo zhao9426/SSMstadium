@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD 
+ Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace实际上接口的名字 -->
+<mapper namespace="mapper.GymnasiumMapper">
+	
+  <insert id="addGymnasium" parameterType="Gymnasium">
+  	insert into gymnasium
+  	values(#{id},#{name},#{area},#{price})
+  </insert>
+	 <delete id="deleteGymnasium">
+  	 delete from gymnasium where id=#{id}
+  </delete>
+	  <select id="findById" resultType="Gymnasium">
+    select * from gymnasium
+    where id = #{id}
+  </select>
+  <!-- resultType表示结果集中一行对应的类型 -->
+  <select id="getGymnasiums" resultType="Gymnasium">
+    select * from gymnasium
+  </select>
+    <update id="updateGymnasium" parameterType="Gymnasium">
+  	update gymnasium
+  	set area=#{area},name=#{name},price=#{price}
+  	where id=#{id}
+  </update>
+</mapper>

@@ -1,0 +1,6 @@
+.settings
+build
+.project
+.DS_Store
+WebContent/build
+.classpath

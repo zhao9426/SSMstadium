@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD 
+ Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace实际上接口的名字 -->
+<mapper namespace="mapper.LoginMapper">
+
+  
+  	
+  <select id="LoginInput" resultType="LoginEntity">
+    select user_id,user_name,user_pass from t_user
+  </select>
+   
+  <select id="regInput" resultType="LoginEntity">
+    insert into t_user(user_id,user_name,user_pass,user_age,user_sex,user_email) 
+    values(#{user_id},#{user_name},#{user_pass},#{user_age},#{user_sex},#{user_email})
+  </select>
+
+
+
+</mapper>
